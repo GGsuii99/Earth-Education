@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview l.html</title>
+    <title>Preview Multiple HTML Files</title>
     <style>
         body, html {
             margin: 0;
@@ -22,7 +22,7 @@
         }
         button {
             display: block;
-            margin: 20px auto;
+            margin: 10px auto;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -30,11 +30,19 @@
     </style>
 </head>
 <body>
-    <button onclick="showPreview()">1</button>
-    <iframe id="preview" src="L.html" sandbox="allow-same-origin allow-scripts"></iframe>
+    <button onclick="showPreview('l.html')">Show l.html</button>
+    <button onclick="showPreview('3.html')">Show 3.html</button>
+    <button onclick="showPreview('G.html')">Show G.html</button>
+    <button onclick="showPreview('Untitled (11).html')">Show Untitled (11).html</button>
+    <button onclick="showPreview('Earth-education.html')">Show Earth-education.html</button>
+    <button onclick="showPreview('Untitled (2).html')">Show Untitled (2).html</button>
+    <button onclick="showPreview('hobbs home.html')">Show hobbs home.html</button>
+    <iframe id="preview" src="" sandbox="allow-same-origin allow-scripts"></iframe>
     <script>
-        function showPreview() {
-            document.getElementById('preview').style.display = 'block';
+        function showPreview(file) {
+            var iframe = document.getElementById('preview');
+            iframe.src = file;
+            iframe.style.display = 'block';
         }
     </script>
 </body>
