@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Preview Multiple HTML Files</title>
     <style>
         body, html {
             margin: 0;
@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <button onclick="showPreview('l.html')">Show l.html</button>
+    <button onclick="showPreview('L.html')">Show L.html</button>
     <button onclick="showPreview('3.html')">Show 3.html</button>
     <button onclick="showPreview('G.html')">Show G.html</button>
     <button onclick="showPreview('Untitled (11).html')">Show Untitled (11).html</button>
@@ -40,9 +40,7 @@
     <iframe id="preview" src="" sandbox="allow-same-origin allow-scripts"></iframe>
     <script>
         function showPreview(file) {
-            var iframe = document.getElementById('preview');
-            iframe.src = file;
-            iframe.style.display = 'block';
+            window.location.href = file;
         }
     </script>
 </body>
