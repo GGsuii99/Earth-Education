@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Game Development</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon -->
+	
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+
+	<!-- Style -->
+	<link href="css/style.css" rel="stylesheet" media="screen">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Nova+Round' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a href="#" class="pull-left">
+				<img id="icon" src="img/logo.png" alt="HTML5 Game Development"/>
+			</a>
+			<nav class="pull-right">
+				<a class="menu-link" href="http://html5-games.github.io">
+					Home
+				</a>
+				<span class="dropdown">
+					<a id="login-menu-link" class="dropdown-toggle menu-link menu-link-dropdown" data-toggle="dropdown" href="#">
+						<span style="background-image: url('img/user-icon.png'); width: 22px; height: 22px;" class="header-icon"></span>
+					</a>
+					<ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="left: -46px; top: 84px;">
+						<!-- Filled by buildMenu() in main.js -->
+					</ul>
+				</span>
+			</nav>
+		</div>
+	</header>
+
+	<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="loginLabel">Login</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="name-login">Username</label>
+						<div class="controls">
+							<input type="text" id="name-login" name="name-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword-login">Password</label>
+						<div class="controls">
+							<input type="password" id="psword-login" name="psword-login">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="logIn()">Login</button>
+		</div>
+	</div>
+
+	<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="signupLabel">Sign Up</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="name-signup">Username *</label>
+						<div class="controls">
+							<input type="text" id="name-signup" name="name-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword-signup">Password *</label>
+						<div class="controls">
+							<input type="password" id="psword-signup" name="psword-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="psword2-signup">Confirm Password *</label>
+						<div class="controls">
+							<input type="password" id="psword2-signup" name="psword2-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="email-signup">Email *</label>
+						<div class="controls">
+							<input type="email" id="email-signup" name="email-signup">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="signUp()">Sign Up</button>
+		</div>
+	</div>
+
+	<section id="intro">
+		<div class="container">
+			<div class="alert alert-warning">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Page Not Complete Yet.</strong> If you want to, you can help build it at <a href="https://github.com/HTML5-Games/html5-games.github.io">https://github.com/HTML5-Games/html5-games.github.io</a>.
+			</div>
+			<h1>Do you love coding games? We do too!</h1>
+			<p class="lead-small">
+				Welcome to the HTML5 Game Development Blog. We are avid programmers and designers that are interested in learning more about the languages around us. If you are interested and not apart of our ever growing community, please sign up and introduce yourself! We are happy to take anyone who has the passion and knowledge to expand the world of the Internet and make use of the fabulous languages that are given to us. If you just need some pointers on a project you are working so hard on, feel free to check the categories and find the appropriate language you need help in. If you don't see the answer you are looking for, or have some advice for anyone else, feel free to comment on the post or ask questions, we are always happy to assist! Thank you for your time and we hope you enjoy your visit!
+			</p>
+		</div>
+	</section>
+
+	<form id="filter" class="form-inline container muted">
+		<label for="category" class="lead">Category:</label>
+		<select id="category" name="category">
+			<option>All Categories</option>
+			<option>Advanced</option>
+			<option>Beginner</option>
+			<option>Canvas</option>
+			<option>CSS</option>
+			<option>Gamedev</option>
+			<option>Graphics</option>
+			<option>HTML5</option>
+			<option>Input</option>
+			<option>Intermediate</option>
+			<option>JavaScript</option>
+			<option>Mobile</option>
+			<option>Music</option>
+			<option>OOP</option>
+			<option>Physics</option>
+			<option>Project</option>
+			<option>Sound</option>
+			<option>Tutorial</option>
+			<option>WebGL</option>
+			<option>2D</option>
+			<option>3D</option>
+		</select>
+
+		<label for="month" class="lead">Month:</label>
+		<select id="month" name="month">
+			<option>All Months</option>
+			<option>June 2013</option>
+		</select>
+
+		<a class="btn pull-right" tabindex="-1" href="#post" role="button" data-toggle="modal">Write Post</a>
+	</form>
+
+	<article>
+		<section class="post block">
+			<div class="container">
+				<h2>This is the title of the blog post</h2>
+				<p class="lead-small">Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
+				<div class="panel lead">
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+				</div>
+				<section class="comments">
+					<h3>Comments</h3>
+					By <a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<a class="btn" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post a Comment</a>
+				</section>
+			</div>
+		</section>
+		<section class="post block red">
+			<div class="container">
+				<h2>This is the title of the blog post</h2>
+				<p class="lead-small">Posted on <time datetime ="2013-05-30T20:40:00-06:00">May 30th, 2013</time> by <a href = "#"> Tritexander </a> - <a href = "#comments"> 2 comments</a></p>
+				<div class="panel lead">
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+					<p>Lorem ipsum dolor sit amet</p>
+				</div>
+				<section class="comments">
+					<h3>Comments</h3>
+					By <a href="#">Tritexander</a> on <time datetime="2013-05-30T23:35:25-06:00">May 30th, 2013 at 23:35</time>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					By <a href="#">Tritexandern</a> on <time datetime="2013-05-30T23:40:09-06:00">May 30th, 2013 at 23:40</time>
+					<p class="lead-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					<a class="btn btn-inverse" tabindex="-1" href="#comment" role="button" data-toggle="modal">Post a Comment</a>
+				</section>
+			</div>
+		</section>
+	</article>
+
+	<div id="post" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="postLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="postLabel">Write Post</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="title-post">Title</label>
+						<div class="controls">
+							<input type="text" id="title-post" name="title-post">
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="text-post">Text</label>
+						<div class="controls">
+							<textarea id="text-post" name="text-post"></textarea>
+							<span class="help-inline"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="tag1-post">Tags</label>
+						<div class="controls">
+							<select id="tag1-post" name="tag1-post">
+								<option></option>
+								<option>Advanced</option>
+								<option>Beginner</option>
+								<option>Canvas</option>
+								<option>CSS</option>
+								<option>Gamedev</option>
+								<option>Graphics</option>
+								<option>HTML5</option>
+								<option>Input</option>
+								<option>Intermediate</option>
+								<option>JavaScript</option>
+								<option>Mobile</option>
+								<option>Music</option>
+								<option>OOP</option>
+								<option>Physics</option>
+								<option>Project</option>
+								<option>Sound</option>
+								<option>Tutorial</option>
+								<option>WebGL</option>
+								<option>2D</option>
+								<option>3D</option>
+							</select>
+							<select id="tag2-post" name="tag2-post">
+								<option></option>
+								<option>Advanced</option>
+								<option>Beginner</option>
+								<option>Canvas</option>
+								<option>CSS</option>
+								<option>Gamedev</option>
+								<option>Graphics</option>
+								<option>HTML5</option>
+								<option>Input</option>
+								<option>Intermediate</option>
+								<option>JavaScript</option>
+								<option>Mobile</option>
+								<option>Music</option>
+								<option>OOP</option>
+								<option>Physics</option>
+								<option>Project</option>
+								<option>Sound</option>
+								<option>Tutorial</option>
+								<option>WebGL</option>
+								<option>2D</option>
+								<option>3D</option>
+							</select>
+							<select id="tag3-post" name="tag3-post">
+								<option></option>
+								<option>Advanced</option>
+								<option>Beginner</option>
+								<option>Canvas</option>
+								<option>CSS</option>
+								<option>Gamedev</option>
+								<option>Graphics</option>
+								<option>HTML5</option>
+								<option>Input</option>
+								<option>Intermediate</option>
+								<option>JavaScript</option>
+								<option>Mobile</option>
+								<option>Music</option>
+								<option>OOP</option>
+								<option>Physics</option>
+								<option>Project</option>
+								<option>Sound</option>
+								<option>Tutorial</option>
+								<option>WebGL</option>
+								<option>2D</option>
+								<option>3D</option>
+							</select>
+							<select id="tag4-post" name="tag4-post">
+								<option></option>
+								<option>Advanced</option>
+								<option>Beginner</option>
+								<option>Canvas</option>
+								<option>CSS</option>
+								<option>Gamedev</option>
+								<option>Graphics</option>
+								<option>HTML5</option>
+								<option>Input</option>
+								<option>Intermediate</option>
+								<option>JavaScript</option>
+								<option>Mobile</option>
+								<option>Music</option>
+								<option>OOP</option>
+								<option>Physics</option>
+								<option>Project</option>
+								<option>Sound</option>
+								<option>Tutorial</option>
+								<option>WebGL</option>
+								<option>2D</option>
+								<option>3D</option>
+							</select>
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="post()">Post</button>
+		</div>
+	</div>
+
+	<div id="comment" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="commentLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id="commentLabel">Comment</h3>
+		</div>
+		<div class="modal-body">
+			<form style="margin-bottom: 0px;">
+				<fieldset>
+					<div class="control-group">
+						<label for="text-comment">Text</label>
+						<div class="controls">
+							<textarea id="text-comment" name="text-comment"></textarea>
+							<span class="help-inline"></span>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" onclick="comment()">Post</button>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<p class="lead" style="margin-top: 10px;">
+				<a class="pull-left" href="https://github.com/HTML5-Games/html5-games.github.io">View this project on GitHub</a>
+				<a class="pull-right btn" href="mailto: html5.gamedev.group@gmail.com">Contact Us</a>
+			</p>
+		</div>
+	</footer>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-41025952-1', 'html5-games.github.io');
+		ga('send', 'pageview');
+	</script>
+
+	<script>
+		displayPosts();
+	</script>
+</body>
+</html>
