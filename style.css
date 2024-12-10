@@ -9,6 +9,21 @@ p {
   font-family: 'Quicksand';
 }
 
+
+/* styles.css */
+body {
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
 h1 {
   font-family: 'Roboto Mono';
   font-weight: 10;
