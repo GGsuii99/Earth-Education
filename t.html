@@ -8,6 +8,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Barrio&family=Comfortaa:wght@300&family=Doto:wght@100..900&family=Kablammo&family=Poiret+One&family=Quicksand:wght@300&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Teko:wght@300&family=Mountains+of+Christmas&display=swap');
 
+        /* Basic reset for margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html, body {
             width: 100%;
             height: 100%;
@@ -15,24 +22,33 @@
             padding: 0;
             display: flex;
             flex-direction: column;
+            justify-content: space-between; /* Distribute space evenly */
             align-items: center;
-            justify-content: center;
-        }
-
-        body {
             background-image: url('1.jpg');
             background-size: cover;
             background-position: center;
         }
 
+        /* Ensuring that body content doesn't overflow */
+        body {
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center the content */
+            align-items: center;
+        }
+
+        /* Heading style */
         h1 {
             font-family: 'Mountains of Christmas', cursive;
             font-size: 4em;
             text-align: center;
-            margin: 0.5em 0;
+            margin: 20px 0;
             color: white;
         }
 
+        /* Button styles */
         button {
             font-family: 'Quicksand', sans-serif;
             color: white;
@@ -49,28 +65,38 @@
         button:hover {
             background-color: darkgreen;
         }
+
+        /* The container for buttons, ensuring they are stacked vertically */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px; /* Gap between last button and bottom of page */
+        }
+
     </style>
 </head>
 <body>
     <h1>Earth Education</h1>
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <!-- <a href="#bottom" style="text-decoration: none; border-radius: 5px; padding: 10px; background-color: green; font-family: 'Quicksand';">Educate</a> -->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="openInNewTab('L.html')">Lunaar</button>
-    <button onclick="openInNewTab('3.html')">3kh0</button>
-    <button onclick="openInNewTab('G.html')">Fina</button>
-    <button onclick="openInNewTab('Untitled (11).html')">Rammerhead</button>
-    <button onclick="openInNewTab('Earth-education.html')">The Final Earth 2</button>
-    <button onclick="openInNewTab('Untitled (2).html')">Great Math Game</button>
-    <button onclick="openInNewTab('hobbs home.html')">Hobbs Home</button>
-    <button onclick="openInNewTab('link.html')">Unblocked links</button>
-    <button onclick="openInNewTab('123.html')"> Doge</button>
-    <!-- <button onclick="openInNewTab('H/index.html')">Html</button> -->
-    <br id="bottom">
+    
+    <!-- Container for buttons -->
+    <div class="button-container">
+        <button onclick="openInNewTab('L.html')">Lunaar</button>
+        <button onclick="openInNewTab('3.html')">3kh0</button>
+        <button onclick="openInNewTab('G.html')">Fina</button>
+        <button onclick="openInNewTab('Untitled (11).html')">Rammerhead</button>
+        <button onclick="openInNewTab('Earth-education.html')">The Final Earth 2</button>
+        <button onclick="openInNewTab('Untitled (2).html')">Great Math Game</button>
+        <button onclick="openInNewTab('hobbs home.html')">Hobbs Home</button>
+        <button onclick="openInNewTab('link.html')">Unblocked links</button>
+        <button onclick="openInNewTab('123.html')">Doge</button>
+    </div>
+
     <script>
         function openInNewTab(file) {
             window.open(file, '_blank');
         }
     </script>
-</body><br>
+</body>
 </html>
