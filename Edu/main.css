@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    background-color: #fff;
+    color: #202124;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    background: #fff;
+    color: #5f6368;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 2%;
+}
+
+nav img {
+    height: 40px;
+}
+
+nav h1 {
+    font-size: 20px;
+    color: #202124;
+}
+
+nav .nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav .nav-menu li {
+    margin: 0 15px;
+}
+
+nav .nav-menu li a {
+    color: #5f6368;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav .nav-menu li a:hover {
+    color: #1a73e8;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f8f9fa;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #202124;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #5f6368;
+}
+
+.hero-button {
+    background-color: #1a73e8;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #1669c1;
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.search input {
+    padding: 10px 20px;
+    border: 1px solid #dadce0;
+    border-radius: 50px 0 0 50px;
+    background-color: #fff;
+    color: #202124;
+    outline: none;
+    width: 400px;
+}
+
+.search button {
+    padding: 10px 20px;
+    border: 1px solid #dadce0;
+    border-radius: 0 50px 50px 0;
+    background-color: #1a73e8;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #1669c1;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f3f4;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #5f6368;
+}
+/* Games Section */
+#games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#games img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* This ensures the image fills the square while maintaining aspect ratio */
+    border-radius: 10px;
+    margin: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#games img:hover {
+    transform: scale(1.05);
+}
