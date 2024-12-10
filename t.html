@@ -35,8 +35,9 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Vertically center the content */
+            justify-content: space-between; /* Distribute space evenly between content */
             align-items: center;
+            height: 100vh; /* Full height of the viewport */
         }
 
         /* Heading style */
@@ -66,13 +67,14 @@
             background-color: darkgreen;
         }
 
-        /* The container for buttons, ensuring they are stacked vertically */
+        /* Container for the buttons */
         .button-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 50px; /* Gap between last button and bottom of page */
+            flex-grow: 1; /* Allow the button container to take up available space */
+            padding: 0 20px;
         }
 
     </style>
@@ -80,7 +82,7 @@
 <body>
     <h1>Earth Education</h1>
     
-    <!-- Container for buttons -->
+    <!-- Button container for vertical stacking and centering -->
     <div class="button-container">
         <button onclick="openInNewTab('L.html')">Lunaar</button>
         <button onclick="openInNewTab('3.html')">3kh0</button>
