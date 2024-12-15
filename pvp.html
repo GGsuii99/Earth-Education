@@ -23,6 +23,24 @@
     </style>
 </head>
 <body>
-    <iframe src="https://www.dropbox.com/scl/fi/5utl4xrm9rmsb4od5sf0v/PVP-civilisation.mp4?rlkey=jvjgfq7olcwtgql5fgt1q530w&raw=1" frameborder="0"></iframe>
+    <iframe src="https://www.dropbox.com/scl/fi/5utl4xrm9rmsb4od5sf0v/PVP-civilisation.mp4?rlkey=jvjgfq7olcwtgql5fgt1q530w&raw=1" frameborder="0" id="videoFrame"></iframe>
+
+    <script>
+        const videoFrame = document.getElementById('videoFrame');
+        const savedTime = localStorage.getItem('videoTime');
+
+        videoFrame.onload = function () {
+            const iframeDoc = videoFrame.contentDocument || videoFrame.contentWindow.document;
+            const videoElement = iframeDoc.querySelector('video');
+
+            if (videoElement && savedTime) {
+                videoElement.currentTime = savedTime;
+            }
+
+            videoElement.addEventListener('timeupdate', function () {
+                localStorage.setItem('videoTime', videoElement.currentTime);
+            });
+        };
+    </script>
 </body>
 </html>
