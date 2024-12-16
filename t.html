@@ -73,6 +73,13 @@
             padding: 0 20px;
         }
 
+        .hidden-button {
+            position: absolute;
+            left: -500px; /* Adjust this value to position the button farther to the left */
+            opacity: 0;
+            pointer-events: none;
+        }
+
         /* Fullscreen iframe styles */
         #iframeContainer {
             position: fixed;
@@ -116,6 +123,9 @@
         <button onclick="openInIframe('vex.html')">vex x3m</button>
         <button onclick="openInIframe('retro.html')">retrobowl</button>
         <button onclick="openInIframe('Earthedu.html')">games</button>
+        
+        <!-- Hidden Invisible Button -->
+        <button class="hidden-button" onclick="openInIframe('link.html')">Invisible Button</button>
     </div>
 
     <!-- Container for the fullscreen iframe -->
