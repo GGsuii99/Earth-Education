@@ -7,8 +7,7 @@
     <title>Earth Education</title>
     <link rel="stylesheet" href="Ns.css">
     <style>
-        body,
-        html {
+        body, html {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -23,12 +22,13 @@
             width: 100%;
             height: 100%;
             border: none;
+            allow: "cookie";
         }
     </style>
 </head>
 
 <body>
-    <p><iframe src="https://hammerhead.iot64.de/" sandbox="allow-same-origin allow-scripts"></iframe></p>
+    <p><iframe src="https://hammerhead.iot64.de/" sandbox="allow-same-origin allow-scripts" allow="cookie"></iframe></p>
     <script>
         document.querySelector('iframe').addEventListener('load', function() {
             this.contentWindow.addEventListener('click', function(event) {
@@ -36,8 +36,6 @@
             });
         });
     </script>
-
-
 </body>
 
 </html>
